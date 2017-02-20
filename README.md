@@ -11,11 +11,6 @@ wrapper. Binding to C++ techniques are based on
 http://stackoverflow.com/questions/1713214/how-to-use-c-in-go .
 
 
-Full documentation
-
-https://godoc.org/github.com/zenixls2/stl
-
-
 ### Doc Generation
 
 ```bash
@@ -32,6 +27,11 @@ https://godoc.org/github.com/zenixls2/stl
     $ go get github.com/zenixls2/stl
 
 ```
+
+
+### Documentation
+
+https://godoc.org/github.com/zenixls2/stl
 
 ## Usage
 
