@@ -6,15 +6,11 @@ wrapper. Binding to C++ techniques are based on http://stackoverflow.com/questio
 
 Doc Generation
 
-```bash
 	$ godocdown > README.md
-```
 
 Installation
 
-```bash
 	$ go get github.com/zenixls2/stl
-```
 
 Documentation
 
