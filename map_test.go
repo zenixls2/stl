@@ -5,6 +5,7 @@ import "testing"
 
 func TestMap(t *testing.T) {
 	m := NewMap()
+	defer m.Free()
 	a := []int{1, 2, 3, 4, 5, 6}
 	m.Add(1, &a[0])
 	m.Add(3, &a[1])
@@ -19,7 +20,8 @@ func TestMap(t *testing.T) {
 	index := 3
 	for end := iter; end != nil; end = iter.Next() {
 		if *(*int)(unsafe.Pointer(iter.Value())) != a[index] {
-			t.Error("Map Lower Bound Next() Error")
+			t.Errorf("Map Lower Bound Next() Error: %d vs %d",
+				*(*int)(unsafe.Pointer(iter.Value())), a[index])
 		}
 		index += 1
 	}
@@ -27,7 +29,8 @@ func TestMap(t *testing.T) {
 	index = 3
 	for end := iter; end != nil; end = iter.Prev() {
 		if *(*int)(unsafe.Pointer(iter.Value())) != a[index] {
-			t.Error("Map Lower Bound Next() Error")
+			t.Errorf("Map Lower Bound Next() Error: %d vs %d",
+				*(*int)(unsafe.Pointer(iter.Value())), a[index])
 		}
 		index -= 1
 	}
